@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:FreshBaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nearest_Pharmacy.Pages.MenuPage"
+             xmlns:local="clr-namespace:FreshMvvm;assembly = Nearest_Pharmacy" Title="Меню" >
+    <local:FreshBaseContentPage.Content >
+        <StackLayout HorizontalOptions="CenterAndExpand" Padding="20">
+                <Button Text ="На главную" Command="{Binding goMain}"/>
+                <Button Text ="Профиль" IsVisible ="{Binding IsLogin}" Command="{Binding goUserProfile}"/>
+                <Button Text ="Заказы" Command="{Binding goOrders}" IsVisible ="{Binding IsLogin}" />
+                <Button Text ="Информация" Command="{Binding goInfo}"/>
+                <Button Text ="Настройки" Command="{Binding goSettings}"/>
+
+          <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                <Button IsVisible ="{Binding IsLogon}" Text="Войти" Command="{Binding goLogin}"/>
+                <Button IsVisible ="{Binding IsLogon}" Text="Регистрация" Command="{Binding goRegister}"/>
+            </StackLayout>
+        </StackLayout>
+    </local:FreshBaseContentPage.Content>
+</local:FreshBaseContentPage>

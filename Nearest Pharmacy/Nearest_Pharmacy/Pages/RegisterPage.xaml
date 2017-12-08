@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:FreshBaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nearest_Pharmacy.Pages.RegisterPage"
+             xmlns:local="clr-namespace:FreshMvvm;assembly = Nearest_Pharmacy"
+                            Title ="Регистрация">
+    <local:FreshBaseContentPage.Content>
+        <StackLayout Padding="20">
+    
+            <Label Text="Регистрация" TextColor="Green" FontSize="20"></Label>
+            <Entry x:Name="Login" Placeholder="Логин" WidthRequest="150" Text ="{Binding Login }" >"</Entry>
+            <Entry x:Name="Password" Placeholder="Пароль" WidthRequest="150" IsPassword ="True" Text ="{Binding Password }" ></Entry>
+            <Entry x:Name="FirstName" Placeholder="Имя" WidthRequest="150" Text ="{Binding FirstName }" ></Entry>
+            <Entry x:Name="MiddleName" Placeholder="Фамилия Name" WidthRequest="150" Text ="{Binding SecondName }"></Entry>
+            <Entry x:Name="LastName" Placeholder="Отчество" WidthRequest="150" Text ="{Binding  Patronomyc }" ></Entry>
+            <Entry x:Name="Email" Placeholder="Элетронная почта" WidthRequest="150" Text ="{Binding Email }" ></Entry>
+            <Entry x:Name="Number" Placeholder="Номер телефона" WidthRequest="150"  Text ="{Binding Number }" ></Entry>
+            <Entry x:Name="Address" Placeholder="Адрес" WidthRequest="150"  Text ="{Binding Address }" ></Entry>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Дата рождения" FontSize="25" TextColor="Green" VerticalOptions="End"  />
+                <DatePicker x:Name="Date" Date="{Binding DateTime}">
+                  <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                </DatePicker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+              <Button BackgroundColor="Green" TextColor="White" Text="Зарегистрироваться" Command ="{Binding Register}"/>
+            </StackLayout>
+    
+        </StackLayout>
+    </local:FreshBaseContentPage.Content>
+</local:FreshBaseContentPage>

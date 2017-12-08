@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:FreshBaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nearest_Pharmacy.Pages.UserProfilePage"
+             xmlns:local="clr-namespace:FreshMvvm;assembly = Nearest_Pharmacy"
+             x:Name="_this">
+    <local:FreshBaseContentPage.Content>
+        <StackLayout>
+          <Label Text="Имя:" FontAttributes="Bold" FontSize="Medium" />
+          <Entry Text="{Binding Name}" FontSize="Medium" TextColor="Green" IsEnabled ="{Binding isEdit}"/> <!--IsEnabled ="{Binding isEdit}-->
+          <Label Text="Дата рождения:" FontAttributes="Bold" FontSize="Medium" />
+          <Entry Text="{Binding BornDate}" FontSize="Medium" TextColor="Green" IsEnabled ="{Binding isEdit}" />
+          <Label Text="Номер телефона:" FontAttributes="Bold" FontSize="Medium"/>
+          <Entry Text="{Binding Number}" FontSize="Medium" TextColor="Green" IsEnabled ="{Binding isEdit}"/>
+          <Label Text="Электронная почта" FontAttributes="Bold" FontSize="Medium" />
+          <Entry Text="{Binding Mail}" FontSize="Medium" TextColor="Green" IsEnabled ="{Binding isEdit}"/>
+          <Label Text="Адрес:" FontAttributes="Bold" FontSize="Medium" />
+          <Entry Text="{Binding Address}" FontSize="Medium" TextColor="Green" IsEnabled ="{Binding isEdit}"/>
+                        <Button Text= "{Binding BindingContext.Mode, Source={x:Reference _this}}" 
+                         Command="{Binding BindingContext.editBtn, Source={x:Reference _this}}" 
+                         CommandParameter="{Binding .}"/>
+        </StackLayout>
+    </local:FreshBaseContentPage.Content>
+</local:FreshBaseContentPage>
+    
+    

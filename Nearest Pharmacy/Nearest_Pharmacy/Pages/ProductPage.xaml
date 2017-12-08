@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:FreshBaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nearest_Pharmacy.Pages.ProductPage"
+             xmlns:local="clr-namespace:FreshMvvm;assembly = Nearest_Pharmacy"
+                          Title="{Binding product.Name}"  >
+    <local:FreshBaseContentPage.Content>
+        <ScrollView>
+          <Frame BackgroundColor="White" Padding="10" HasShadow="False">
+           
+            <StackLayout>
+                <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+                    <Image  WidthRequest="400" HeightRequest="400" Aspect="Fill">
+                        <Image.Source>
+                          <UriImageSource Uri="{Binding product.ImageURI}"
+                            CacheValidity="14"
+                            CachingEnabled="true"/>
+                        </Image.Source>
+                      </Image>
+                </StackLayout>
+                <StackLayout  Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                    <Label Text="Имя:" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center"/>
+                    <Label Text="{Binding product.Name}" FontSize="Medium" TextColor="Green" HorizontalOptions="Center"/>
+                    <Label Text="Категория:" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center" />
+                    <Label Text="{Binding product.Category}" FontSize="Medium" TextColor="Green" HorizontalOptions="CenterAndExpand" />
+                    <Label Text="Вид:" FontSize="Medium" FontAttributes="Bold"  HorizontalOptions="Center"/>
+                    <Label Text="{Binding product.Type}" FontSize="Medium" TextColor="Green"  HorizontalOptions="Center"/>
+                    <Label Text="Цена:" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center"/>
+                    <Label Text="{Binding product.Price}" FontSize="Medium" TextColor="Green" HorizontalOptions="Center"/>
+                    <Label Text="Описание:" FontSize="Medium" FontAttributes="Bold"  HorizontalOptions="Center"/>
+                    <Label Text="{Binding product.Description}" FontSize="Medium" TextColor="Green"  HorizontalOptions="Center"/>
+                </StackLayout>
+                <Button Text="Добавить в корзину" Command="{Binding addToBasket}" />
+            </StackLayout>
+          </Frame>
+        </ScrollView>            
+    
+    </local:FreshBaseContentPage.Content>
+</local:FreshBaseContentPage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:FreshBaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nearest_Pharmacy.Pages.BasketPage"
+              xmlns:local="clr-namespace:FreshMvvm;assembly = Nearest_Pharmacy">
+    <local:FreshBaseContentPage.Content>
+        <ListView ItemsSource="{Binding basket}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Label Text="{Binding Name}"/>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </local:FreshBaseContentPage.Content>
+</local:FreshBaseContentPage>
